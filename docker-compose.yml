@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://postgres:mysecretpassword@db:5432/postgres?schema=public"
+      DB_USER: postgres
+      DB_PASSWORD: mysecretpassword
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: postgres
+
+volumes:
+  db-data:

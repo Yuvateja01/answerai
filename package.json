@@ -1,0 +1,39 @@
+{
+  "name": "answerai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx prisma migrate dev && tsc -b && cd dist && node server.js",
+    "migrate:test": "dotenv -e .env.test -- npx prisma migrate dev",
+    "test": "SET NODE_ENV=test && jest --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.2",
+    "prisma": "^5.15.0",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.9.1",
+    "@prisma/client": "^5.15.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/supertest": "^6.0.2",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "langchain": "^0.2.5",
+    "langsmith": "^0.1.31",
+    "supertest": "^7.0.0",
+    "zod": "^3.23.8"
+  }
+}
