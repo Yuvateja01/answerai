@@ -14,8 +14,8 @@ This guide will help you set up the project locally using Docker Compose.
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/yourusername/yourrepository.git
-   cd yourrepository
+   https://github.com/Yuvateja01/answerai.git
+   cd answerai
 
 2. Run the containers
    ```sh
